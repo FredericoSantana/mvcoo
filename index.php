@@ -1,15 +1,23 @@
 <?php
 require_once __DIR__ . '/source/autoload.php';
 
-var_dump(get_defined_constants(true)['user']);
+$session = new \Source\Core\Session();
+//$session->set("user", 1);
+//
+//$session->regenerate();
+//
+//$session->set('stats', ['name', 'email']);
+//$session->unset("stats");
+//
+//if (!$session->has('login')){
+//  echo "Logar-se";
+//  $user = (new \Source\Models\User())->load(1);
+//  $session->set("login", $user->data());
+//}
 
-use Source\Core\Connect;
+$session->destroy();
 
-$read = Connect::getInstance()->prepare("SELECT * FROM users LIMIT 1,1");
-$read->execute();
-var_dump($read->fetchAll());
-
-use Source\Models\User;
-
-$user = (new User())->load(1);
-var_dump($user);
+var_dump(
+  $_SESSION,
+  $session->all()
+);

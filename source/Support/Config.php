@@ -20,3 +20,8 @@ const CONF_URL_ERROR = CONF_URL_BASE . "/404";
  */
 const CONF_DATE_BR = "d/m/Y H:i:s";
 const CONF_DATE_APP = "Y-m-d H:i:s";
+
+/**
+ * SESSION
+ */
+const CONF_SES_PATH = __DIR__ . '/../../storage/sessions';
