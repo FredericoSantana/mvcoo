@@ -31,6 +31,8 @@ const CONF_SES_PATH = __DIR__ . '/../../storage/sessions';
  */
 const CONF_PASSWD_MIN_LEN = 8;
 const CONF_PASSWD_MAX_LEN = 40;
+const CONF_PASSWD_ALGO = PASSWORD_DEFAULT;
+const CONF_PASSWD_OPTION = ['cost' => 10];
 
 /**
  * MESSAGE
