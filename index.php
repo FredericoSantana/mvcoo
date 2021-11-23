@@ -5,6 +5,7 @@ use Source\Database\Connect;
 
 $pdo = Connect::getInstance();
 
-var_dump($pdo,
-    Connect::getInstance()->errorInfo()
-);
+$read = $pdo->query("SELECT * FROM users LIMIT 2");
+foreach ($read->fetchAll(PDO::FETCH_CLASS, \Source\Database\Entity\UserEntity::class) as $user) {
+    var_dump($user, $user->getFirstName());
+}
