@@ -100,14 +100,36 @@ abstract class Model
     }
   }
 
-  protected function update()
+  protected function update(string $entity, array $data, string $terms, string $params): ?int
   {
+    try {
+      $dateSet = [];
+      foreach ($data as $bind => $value) {
+        $dateSet[] = "{$bind} = :{$bind}";
+      }
+      $dateSet = implode(", ", $dateSet);
+      parse_str($params, $params);
 
+      $stmt = Connect::getInstance()->prepare("UPDATE {$entity} SET {$dateSet} WHERE {$terms}");
+      $stmt->execute($this->filter(array_merge($data, $params)));
+      return ($stmt->rowCount() ?? 1);
+    } catch (\PDOException $exception) {
+      $this->fail = $exception;
+      return null;
+    }
   }
 
-  protected function delete()
+  protected function delete(string $entity, string $terms, string $params): ?int
   {
-
+    try {
+      $stmt = Connect::getInstance()->prepare("DELETE FROM {$entity} WHERE {$terms}");
+      parse_str($params, $params);
+      $stmt->execute($params);
+      return ($stmt->rowCount() ?? 1);
+    } catch (\PDOException $exception) {
+      $this->fail = $exception;
+      return null;
+    }
   }
 
   protected function safe(): ?array

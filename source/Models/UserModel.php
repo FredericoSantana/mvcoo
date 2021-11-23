@@ -24,9 +24,7 @@ class UserModel extends Model
 
   public function load(int $id, string $columns = "*"): ?UserModel
   {
-    $load = $this->read("SELECT {$columns} 
-                                     FROM " . self::$entity . "
-                                    WHERE id = :id", "id={$id}");
+    $load = $this->read("SELECT {$columns} FROM " . self::$entity . " WHERE id = :id", "id={$id}");
     if ($this->fail() || !$load->rowCount()) {
       $this->message = "Usuário não encontrado par ao id informado";
       return null;
@@ -37,9 +35,7 @@ class UserModel extends Model
 
   public function find($email, string $columns = "*"): ?UserModel
   {
-    $find = $this->read("SELECT {$columns} 
-                                   FROM " . self::$entity . "
-                                  WHERE email = :email", "email={$email}");
+    $find = $this->read("SELECT {$columns} FROM " . self::$entity . " WHERE email = :email", "email={$email}");
     if ($this->fail() || !$find->rowCount()) {
       $this->message = "Usuário não encontrado para o e-mail informado";
       return null;
@@ -50,10 +46,7 @@ class UserModel extends Model
 
   public function all(int $limit = 30, int $offset = 0, string $columns = "*"): ?array
   {
-    $all = $this->read("SELECT {$columns} 
-                                  FROM " . self::$entity . "
-                                 LIMIT :l 
-                                OFFSET :o", "l={$limit}&o={$offset}");
+    $all = $this->read("SELECT {$columns} FROM " . self::$entity . " LIMIT :l OFFSET :o", "l={$limit}&o={$offset}");
     if ($this->fail() || !$all->rowCount()) {
       $this->message = "Sua consulta não retornou usuários";
       return null;
@@ -89,16 +82,25 @@ class UserModel extends Model
       $this->message = "Cadastro realizado com sucesso";
     }
 
-    $this->data = $this->read("SELECT *
-                                           FROM users 
-                                          WHERE id = :id", "id={$userId}")->fetch();
+    $this->data = $this->read("SELECT * FROM users WHERE id = :id", "id={$userId}")->fetch();
 
     return $this;
   }
 
-  public function destroy()
+  public function destroy(): ?UserModel
   {
+    if (!empty($this->id)) {
+      $this->delete(self::$entity, "id = :id", "id={$this->id}");
+    }
 
+    if ($this->fail()){
+      $this->message = "Não foi possível remover o usuário.";
+      return null;
+    }
+
+    $this->message = "Usuário removido com sucesso";
+    $this->data = null;
+    return $this;
   }
 
   private function required(): bool
