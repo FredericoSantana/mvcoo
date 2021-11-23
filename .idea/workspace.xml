@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2b5ccc5-9d0b-4867-92d2-85718b1c1329" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/766c8b85-a0a1-44b0-8478-f6d99364bd64.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/766c8b85-a0a1-44b0-8478-f6d99364bd64.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/Database/Connect.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Database/Connect.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/Models/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/Model.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/Models/UserModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/UserModel.php" afterDir="false" />
     </list>
@@ -58,6 +55,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -96,7 +94,7 @@
       <updated>1637629086312</updated>
       <workItem from="1637629087904" duration="600000" />
       <workItem from="1637632001822" duration="5123000" />
-      <workItem from="1637668584756" duration="3354000" />
+      <workItem from="1637668584756" duration="6650000" />
     </task>
     <servers />
   </component>

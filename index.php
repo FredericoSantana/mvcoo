@@ -5,18 +5,20 @@ use Source\Database\Connect;
 
 $model = new \Source\Models\UserModel();
 
-$user = $model->load(1);
+$user = $model->boostrap(
+  "Frederico",
+  "Santana",
+  "fred@email.com",
+  12345678
+);
+var_dump($user);
 
-var_dump($user, "{$user->first_name} {$user->last_name}");
 
-$user = $model->find("willian28@email.com.br");
-
-var_dump($user, "{$user->first_name} {$user->last_name}");
-
-$all = $model->all(5);
-
-/** @var  \Source\Models\UserModel $user */
-foreach ($all as $user) {
-  $user->first_name = "Fred";
-  var_dump($user, "{$user->first_name} {$user->last_name}");
+if (!$model->find($user->email)){
+  echo "<p class='trigger warning'>Cadastro</p>";
+  $user->save();
+}else{
+  echo "<p class='trigger warning'>Read</p>";
 }
+
+var_dump($user);
