@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2b5ccc5-9d0b-4867-92d2-85718b1c1329" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/source/Core/Message.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/Support/Helpers.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/Support/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Support/Config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/autoload.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +64,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -103,7 +104,7 @@
       <updated>1637629086312</updated>
       <workItem from="1637629087904" duration="600000" />
       <workItem from="1637632001822" duration="5123000" />
-      <workItem from="1637668584756" duration="16330000" />
+      <workItem from="1637668584756" duration="17882000" />
     </task>
     <servers />
   </component>
