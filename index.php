@@ -3,9 +3,20 @@ require_once __DIR__ . '/source/autoload.php';
 
 use Source\Database\Connect;
 
-$pdo = Connect::getInstance();
+$model = new \Source\Models\UserModel();
 
-$read = $pdo->query("SELECT * FROM users LIMIT 2");
-foreach ($read->fetchAll(PDO::FETCH_CLASS, \Source\Database\Entity\UserEntity::class) as $user) {
-    var_dump($user, $user->getFirstName());
+$user = $model->load(1);
+
+var_dump($user, "{$user->first_name} {$user->last_name}");
+
+$user = $model->find("willian28@email.com.br");
+
+var_dump($user, "{$user->first_name} {$user->last_name}");
+
+$all = $model->all(5);
+
+/** @var  \Source\Models\UserModel $user */
+foreach ($all as $user) {
+  $user->first_name = "Fred";
+  var_dump($user, "{$user->first_name} {$user->last_name}");
 }

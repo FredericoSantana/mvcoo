@@ -11,7 +11,8 @@ class Connect
     private const HOST = "localhost";
     private const USER = "root";
     private const DBNAME = "mvcoo";
-    private const PASSWD = "";
+    private const PASSWD = "root";
+//    private const PASSWD = "";
 
     private const OPTIONS = [
         //
