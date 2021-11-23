@@ -3,8 +3,13 @@
 
 namespace Source\Models;
 
+use Source\Core\Model;
 
-class UserModel extends Model
+/**
+ * Class User
+ * @package Source\Models
+ */
+class User extends Model
 {
   /** @var array $safe no update or create */
   protected static $safe = ["id", "created_at", "updated_at"];
@@ -12,7 +17,14 @@ class UserModel extends Model
   /** @var string $entity database table */
   protected static $entity = "users";
 
-  public function boostrap(string $firstName, string $lastName, string $email, string $document = null): ?UserModel
+  /**
+   * @param string $firstName
+   * @param string $lastName
+   * @param string $email
+   * @param string|null $document
+   * @return null|User
+   */
+  public function boostrap(string $firstName, string $lastName, string $email, string $document = null): ?User
   {
     $this->first_name = $firstName;
     $this->last_name = $lastName;
@@ -22,7 +34,12 @@ class UserModel extends Model
     return $this;
   }
 
-  public function load(int $id, string $columns = "*"): ?UserModel
+  /**
+   * @param int $id
+   * @param string $columns
+   * @return User|null
+   */
+  public function load(int $id, string $columns = "*"): ?User
   {
     $load = $this->read("SELECT {$columns} FROM " . self::$entity . " WHERE id = :id", "id={$id}");
     if ($this->fail() || !$load->rowCount()) {
@@ -33,7 +50,12 @@ class UserModel extends Model
     return $load->fetchObject(__CLASS__);
   }
 
-  public function find($email, string $columns = "*"): ?UserModel
+  /**
+   * @param $email
+   * @param string $columns
+   * @return User|null
+   */
+  public function find($email, string $columns = "*"): ?User
   {
     $find = $this->read("SELECT {$columns} FROM " . self::$entity . " WHERE email = :email", "email={$email}");
     if ($this->fail() || !$find->rowCount()) {
@@ -44,6 +66,12 @@ class UserModel extends Model
     return $find->fetchObject(__CLASS__);
   }
 
+  /**
+   * @param int $limit
+   * @param int $offset
+   * @param string $columns
+   * @return array|null
+   */
   public function all(int $limit = 30, int $offset = 0, string $columns = "*"): ?array
   {
     $all = $this->read("SELECT {$columns} FROM " . self::$entity . " LIMIT :l OFFSET :o", "l={$limit}&o={$offset}");
@@ -55,7 +83,10 @@ class UserModel extends Model
     return $all->fetchAll(\PDO::FETCH_CLASS, __CLASS__);
   }
 
-  public function save(): ?UserModel
+  /**
+   * @return $this|null
+   */
+  public function save(): ?User
   {
     if (!$this->required()) {
       return null;
@@ -87,7 +118,10 @@ class UserModel extends Model
     return $this;
   }
 
-  public function destroy(): ?UserModel
+  /**
+   * @return $this|null
+   */
+  public function destroy(): ?User
   {
     if (!empty($this->id)) {
       $this->delete(self::$entity, "id = :id", "id={$this->id}");
@@ -103,6 +137,9 @@ class UserModel extends Model
     return $this;
   }
 
+  /**
+   * @return bool
+   */
   private function required(): bool
   {
     if (empty($this->first_name || $this->last_name || $this->email)) {

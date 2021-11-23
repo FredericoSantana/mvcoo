@@ -1,10 +1,15 @@
 <?php
 require_once __DIR__ . '/source/autoload.php';
 
-use Source\Database\Connect;
+var_dump(get_defined_constants(true)['user']);
 
-$model = new \Source\Models\UserModel();
+use Source\Core\Connect;
 
-$user = $model->load(51);
-$user->destroy();
+$read = Connect::getInstance()->prepare("SELECT * FROM users LIMIT 1,1");
+$read->execute();
+var_dump($read->fetchAll());
+
+use Source\Models\User;
+
+$user = (new User())->load(1);
 var_dump($user);

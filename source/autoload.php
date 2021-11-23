@@ -1,4 +1,5 @@
 <?php
+require __DIR__ . "/Support/Config.php";
 
 spl_autoload_register(function ($class) {
     $prefix = "Source\\";
