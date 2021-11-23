@@ -27,6 +27,12 @@ const CONF_DATE_APP = "Y-m-d H:i:s";
 const CONF_SES_PATH = __DIR__ . '/../../storage/sessions';
 
 /**
+ * PASSWORD
+ */
+const CONF_PASSWD_MIN_LEN = 8;
+const CONF_PASSWD_MAX_LEN = 40;
+
+/**
  * MESSAGE
  */
 const CONF_MESSAGE_CLASS = "trigger";

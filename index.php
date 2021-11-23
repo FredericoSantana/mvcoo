@@ -1,11 +1,31 @@
 <?php
 require_once __DIR__ . '/source/autoload.php';
 
-$string = "Essa é uma string, nela temos um under_score e um guarda-chuva";
 $message = new \Source\Core\Message();
-echo $message->info(str_slug($string));
-echo $message->info(str_studly_case($string));
-echo $message->info(str_camel_case($string));
-echo $message->info(str_title($string));
-echo $message->info(str_limit_words($string, 10));
-echo $message->info(str_limit_chars($string, 48));
+
+$email = "cursos@email.com";
+
+if (!is_email($email)){
+  echo $message->error("Email inválido");
+}else{
+  echo $message->success("email correto");
+}
+
+$passwd = "123456781234567812345678123456781234567812345678";
+
+if (!is_passwd($passwd)){
+  echo $message->error("senha inválido");
+}else{
+  echo $message->success("senha correto");
+}
+
+var_dump([
+  url("/blog/titulo"),
+  url("blog/titulo"),
+]);
+
+if (empty($_GET)) {
+  redirect("?f=true");
+}
+
+var_dump(user()->load(1));
