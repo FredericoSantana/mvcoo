@@ -1,20 +1,47 @@
 <?php
+require __DIR__ . '/fullstackphp/fsphp.php';
 require_once __DIR__ . '/vendor/autoload.php';
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
+/*
+Creating Engines
+- new League\Plates\Engine('/path/to/templates')
++ League\Plates\Engine::create('/path/to/templates', 'php')
 
-$email = (new \Source\Core\Email())->boostrap(
-  "Olá mundo, esse é o meu email top.",
-  "<h1>Olá mundo!</h1><p>Essa é uma mensagem via rotina da aplicação.</p>",
-  "fredericosantana11@gmail.com",
-  "Mim mesmo"
-);
+Render context
 
-$email->attach("logo.png", "logo");
+- <?= $this->section() ?>
++ <?= $v->section() ?>
 
-if ($email->send()){
-  echo message()->success("Email enviado com sucesso");
-}else{
-  echo $email->message();
+ */
+
+$plates = new \League\Plates\Engine();
+var_dump(get_class_methods($plates));
+
+//$plates->addFolder("test", __DIR__ . '/assets/views/test');
+//
+//if (empty($_GET['id'])) {
+//  echo $plates->render('test::list', [
+//    "title" => "Usuários do sistema",
+//    "list" => (new \Source\Models\User())->all(5)
+//  ]);
+//} else {
+//  echo $plates->render('test::user', [
+//    "title" => "Editar usuário",
+//    "user" => (new \Source\Models\User())->findById($_GET['id'])
+//  ]);
+//}
+
+$view = new \Source\Core\View();
+$view->path('test', CONF_VIEW_PATH);
+
+if (empty($_GET['id'])) {
+  echo $view->render('test::list', [
+    "title" => "Usuários do sistema",
+    "list" => (new \Source\Models\User())->all(5)
+  ]);
+} else {
+  echo $view->render('test::user', [
+    "title" => "Editar usuário",
+    "user" => (new \Source\Models\User())->findById($_GET['id'])
+  ]);
 }

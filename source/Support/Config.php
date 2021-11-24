@@ -44,6 +44,13 @@ const CONF_MESSAGE_WARNING = "warning";
 const CONF_MESSAGE_ERROR = "error";
 
 /**
+ * VIEW
+ */
+const CONF_VIEW_PATH = __DIR__ . "/assets/view/test";
+const CONF_VIEW_EXT = "php";
+
+
+/**
  * MAIL
  */
 
