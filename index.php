@@ -1,46 +1,32 @@
 <?php
 require_once __DIR__ . '/source/autoload.php';
 
-$model = new \Source\Models\User();
+$post = filter_input_array(INPUT_POST, FILTER_SANITIZE_SPECIAL_CHARS);
+if ($post) {
+  $data = (object)$post;
 
-$user = $model->find("id = :id", "id=1");
+  if (!csrf_verify($post)){
+    $error = message()->error("Erro ao enviar, favor tente novamente");
+  }else{
+    $user = new \Source\Models\User();
+    $user->boostrap(
+      $data->first_name,
+      $data->last_name,
+      $data->email,
+      $data->password
+    );
 
-var_dump($user);
+    if (!$user->save()) {
+      echo $user->message();
+    }else{
+      echo message()->success("Cadastro realizado com sucesso");
+//      unset($data);
+    }
 
-$user = $model->findById(2);
-var_dump($user);
+    var_dump($user->data());
+  }
 
-$user = $model->findByEmail("sidney38@email.com.br");
-var_dump($user);
-
-$list = $model->all(2,5);
-var_dump($list);
-
-$user = $model->boostrap(
-  "Frederico",
-  "Santana",
-  "fred@email.com.br",
-  "1234"
-);
-
-if ($user->save()) {
-  echo message()->success("Cadastro realizado com sucesso");
-}else{
-  echo $user->message();
-  echo message()->info($user->message()->json());
+  var_dump($data);
 }
 
-$user = (new \Source\Models\User())->findById(52);
-$user->first_name = "Iara";
-$user->last_name = "Neves";
-$user->password = passwd(321654789);
-
-if ($user->save()) {
-  echo message()->success("Cadastro atualizados com sucesso");
-}else{
-  echo $user->message();
-  echo message()->info($user->message()->json());
-}
-
-var_dump($user);
-
+require 'form.php';
