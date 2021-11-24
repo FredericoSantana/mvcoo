@@ -1,9 +1,20 @@
 <?php
-require_once __DIR__ . '/source/autoload.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
-$user = (new \Source\Models\User())->findById(1);
-$user->save();
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-var_dump(
-  $user
+$email = (new \Source\Core\Email())->boostrap(
+  "Olá mundo, esse é o meu email top.",
+  "<h1>Olá mundo!</h1><p>Essa é uma mensagem via rotina da aplicação.</p>",
+  "fredericosantana11@gmail.com",
+  "Mim mesmo"
 );
+
+$email->attach("logo.png", "logo");
+
+if ($email->send()){
+  echo message()->success("Email enviado com sucesso");
+}else{
+  echo $email->message();
+}

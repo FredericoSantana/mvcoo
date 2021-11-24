@@ -42,3 +42,21 @@ const CONF_MESSAGE_INFO = "info";
 const CONF_MESSAGE_SUCCESS = "success";
 const CONF_MESSAGE_WARNING = "warning";
 const CONF_MESSAGE_ERROR = "error";
+
+/**
+ * MAIL
+ */
+
+const CONF_MAIL_HOST = "smtp.gmail.com";
+const CONF_MAIL_PORT = "587";
+const CONF_MAIL_USER = "fredericosantana11@gmail.com";
+const CONF_MAIL_PASS = "engels967947";
+const CONF_MAIL_SENDER = [
+  "name" => "Frederico Santana",
+  "address" => "fredericosantana11@gmail.com"
+];
+const CONF_MAIL_OPTIONS_LANG = "br";
+const CONF_MAIL_OPTIONS_HTML = "true";
+const CONF_MAIL_OPTIONS_AUTH = "true";
+const CONF_MAIL_OPTIONS_SECURE = "tls";
+const CONF_MAIL_OPTIONS_CHARSET = "utf-8";

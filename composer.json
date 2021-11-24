@@ -1,0 +1,28 @@
+{
+  "name": "fredericosantana/mvcoo",
+  "description": "Foramação Full Stack PHP Developer",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Frederico Santana",
+      "email": "fredericosantana@hotmail.com.br",
+      "role": "Developer"
+    }
+  ],
+  "config": {
+    "vendor-dir": "vendor"
+  },
+  "autoload": {
+    "psr-4": {
+      "Source\\": "source/"
+    },
+    "files": [
+      "source/Support/Config.php",
+      "source/Support/Helpers.php"
+    ]
+  },
+  "require": {
+    "phpmailer/phpmailer": "~6.0"
+  }
+}

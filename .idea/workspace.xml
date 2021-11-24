@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2b5ccc5-9d0b-4867-92d2-85718b1c1329" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/Core/Email.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/mvcoo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mvcoo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/form.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/Core/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Core/Model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Support/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Support/Config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/autoload.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,7 +18,10 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ComposerSettings">
-    <execution />
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <phar pharPath="$PROJECT_DIR$/composer.phar" interpreterId="d2d86fcc-48eb-4946-992d-ee97421eed12" />
+    </execution>
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -39,6 +47,13 @@
     </expand>
     <select />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="composer.json" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -49,6 +64,12 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/phpmailer/phpmailer" />
+    </include_path>
   </component>
   <component name="ProjectId" id="21IWT6NBW3x5gUttX5q7rvm9Zou" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -75,6 +96,12 @@
       <recent name="C:\xampp\htdocs\mvcoo\source\Core" />
       <recent name="C:\xampp\htdocs\mvcoo" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ComposerRunConfigurationType" factoryName="Composer Script">
+      <option name="pathToComposerJson" value="$PROJECT_DIR$/composer.json" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="ServiceViewManager">
     <option name="allServicesViewState">
@@ -105,7 +132,7 @@
       <workItem from="1637629087904" duration="600000" />
       <workItem from="1637632001822" duration="5123000" />
       <workItem from="1637668584756" duration="24110000" />
-      <workItem from="1637751621021" duration="7779000" />
+      <workItem from="1637751621021" duration="16682000" />
     </task>
     <servers />
   </component>
