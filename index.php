@@ -13,10 +13,11 @@ Render context
 + <?= $v->section() ?>
 
  */
-$controller = new \Source\App\Controllers\UserController();
+use Source\Core\Route;
 
-if (empty($_GET['id'])) {
-  $controller->home();
-}else{
-  $controller->edit();
-}
+Route::get("/", "UserController:home");
+Route::get("/editar", "UserController:edit");
+
+Route::get("/rotas", function (){
+var_dump(Route::routes());
+});
