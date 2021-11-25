@@ -13,26 +13,22 @@ class View
   /** @var Engine */
   private $engine;
 
-  /**
-   * View constructor.
-   * @param string $path
-   */
-  public function __construct(string $path = CONF_VIEW_PATH)
+    /**
+     * View constructor.
+     * @param string $path
+     * @param string $ext
+     */
+  public function __construct(string $path = CONF_VIEW_PATH, string $ext = CONF_VIEW_EXT)
   {
-    $this->engine = new \League\Plates\Engine($path);
+    $this->engine = new \League\Plates\Engine($path, $ext);
   }
-
-//  public function __construct(Engine $engine)
-//  {
-//    $this->engine = $engine;
-//  }
 
   /**
    * @param string $name
    * @param string $path
    * @return $this
    */
-  public function path(string $name, string $path): View
+  public function path(string $name, string $path = CONF_VIEW_PATH): View
   {
     $this->engine->addFolder($name, $path);
     return $this;

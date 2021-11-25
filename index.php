@@ -13,35 +13,12 @@ Render context
 + <?= $v->section() ?>
 
  */
+$seo = new \Source\Support\Seo();
+$seo->render(
+  "Foramação Full Stack PHP Developer",
+  "descrição da pagina",
+  "www.freddev.com",
+    "https://www.upinside.com.br/psphp/images/cover.jpg"
 
-$plates = new \League\Plates\Engine();
-var_dump(get_class_methods($plates));
-
-//$plates->addFolder("test", __DIR__ . '/assets/views/test');
-//
-//if (empty($_GET['id'])) {
-//  echo $plates->render('test::list', [
-//    "title" => "Usuários do sistema",
-//    "list" => (new \Source\Models\User())->all(5)
-//  ]);
-//} else {
-//  echo $plates->render('test::user', [
-//    "title" => "Editar usuário",
-//    "user" => (new \Source\Models\User())->findById($_GET['id'])
-//  ]);
-//}
-
-$view = new \Source\Core\View();
-$view->path('test', CONF_VIEW_PATH);
-
-if (empty($_GET['id'])) {
-  echo $view->render('test::list', [
-    "title" => "Usuários do sistema",
-    "list" => (new \Source\Models\User())->all(5)
-  ]);
-} else {
-  echo $view->render('test::user', [
-    "title" => "Editar usuário",
-    "user" => (new \Source\Models\User())->findById($_GET['id'])
-  ]);
-}
+);
+var_dump($seo->optimizer()->debug());

@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2b5ccc5-9d0b-4867-92d2-85718b1c1329" name="Default Changelist" comment="">
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
       <change afterPath="$PROJECT_DIR$/assets/views/test/base.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/assets/views/test/list.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/assets/views/test/user.php" afterDir="false" />
@@ -22,6 +25,7 @@
       <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/platform_check.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/platform_check.php" afterDir="false" />
+>>>>>>> c2b9f02c8e66319d17ff196862d74a75991f959f
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,9 +148,17 @@
       <option name="presentableId" value="Default" />
       <updated>1637629086312</updated>
       <workItem from="1637629087904" duration="600000" />
+<<<<<<< HEAD
+      <workItem from="1637632001822" duration="5509000" />
+=======
       <workItem from="1637632001822" duration="5123000" />
       <workItem from="1637668584756" duration="24110000" />
+<<<<<<< HEAD
       <workItem from="1637751621021" duration="26567000" />
+=======
+      <workItem from="1637751621021" duration="26328000" />
+>>>>>>> c2b9f02c8e66319d17ff196862d74a75991f959f
+>>>>>>> refs/remotes/origin/main
     </task>
     <servers />
   </component>
