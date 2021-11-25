@@ -117,6 +117,57 @@
             "install-path": "../coffeecode/optimizer"
         },
         {
+            "name": "coffeecode/paginator",
+            "version": "1.0.7",
+            "version_normalized": "1.0.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/robsonvleite/paginator.git",
+                "reference": "a6941246f7ccd842be2072d796d4fb448c22cdb1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/robsonvleite/paginator/zipball/a6941246f7ccd842be2072d796d4fb448c22cdb1",
+                "reference": "a6941246f7ccd842be2072d796d4fb448c22cdb1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2"
+            },
+            "time": "2021-03-21T17:57:29+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "CoffeeCode\\Paginator\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Robson V. Leite",
+                    "email": "cursos@upinside.com.br",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Paginator is simple and is ready to generate results navigation in your application",
+            "homepage": "http://www.upinside.com.br",
+            "keywords": [
+                "Coffeecode",
+                "pagination",
+                "paginator",
+                "upinside"
+            ],
+            "support": {
+                "issues": "https://github.com/robsonvleite/paginator/issues",
+                "source": "https://github.com/robsonvleite/paginator/tree/1.0.7"
+            },
+            "install-path": "../coffeecode/paginator"
+        },
+        {
             "name": "coffeecode/uploader",
             "version": "1.0.11",
             "version_normalized": "1.0.11.0",
@@ -246,17 +297,17 @@
         },
         {
             "name": "phpmailer/phpmailer",
-            "version": "v6.5.1",
-            "version_normalized": "6.5.1.0",
+            "version": "v6.5.2",
+            "version_normalized": "6.5.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPMailer/PHPMailer.git",
-                "reference": "dd803df5ad7492e1b40637f7ebd258fee5ca7355"
+                "reference": "3984c9a0d3a042fdd7fb393c0c7899ac99c78185"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/dd803df5ad7492e1b40637f7ebd258fee5ca7355",
-                "reference": "dd803df5ad7492e1b40637f7ebd258fee5ca7355",
+                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/3984c9a0d3a042fdd7fb393c0c7899ac99c78185",
+                "reference": "3984c9a0d3a042fdd7fb393c0c7899ac99c78185",
                 "shasum": ""
             },
             "require": {
@@ -283,7 +334,7 @@
                 "stevenmaguire/oauth2-microsoft": "Needed for Microsoft XOAUTH2 authentication",
                 "symfony/polyfill-mbstring": "To support UTF-8 if the Mbstring PHP extension is not enabled (^1.2)"
             },
-            "time": "2021-08-18T09:14:16+00:00",
+            "time": "2021-11-25T16:22:03+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -315,7 +366,7 @@
             "description": "PHPMailer is a full-featured email creation and transfer class for PHP",
             "support": {
                 "issues": "https://github.com/PHPMailer/PHPMailer/issues",
-                "source": "https://github.com/PHPMailer/PHPMailer/tree/v6.5.1"
+                "source": "https://github.com/PHPMailer/PHPMailer/tree/v6.5.2"
             },
             "funding": [
                 {

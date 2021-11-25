@@ -13,11 +13,60 @@ Render context
 + <?= $v->section() ?>
 
  */
-$t = new \Source\Support\Thumb();
-var_dump($t);
+$total = db()->query("SELECT COUNT(id) as total FROM users")->fetch()->total;
 
-echo "<img src='{$t->make("images/2021/11/nome-do-arquivo.jpg", 300)}' alt='' title=''>";
-echo "<img src='{$t->make("images/2021/11/nome-do-arquivo.jpg", 150, 150)}' alt='' title=''>";
+$getPage = filter_input(INPUT_GET, "page", FILTER_VALIDATE_INT);
+
+$pager = new \Source\Support\Pager("?page=");
+$pager->pager($total, 5, $getPage, 2);
+
+echo <<<style
+<style>
+.paginator {
+display: block;
+text-align: center;
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+}
+
+.paginator_item {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 4px 12px;
+    background: #A287E7;
+    color: #fff;
+    text-decoration: none;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.paginator_item:hover {
+    background: #8A6ED5;
+}
+
+.paginator_active,
+.paginator_active:hover {
+    background: #cccccc;
+}
+</style>
+style;
 
 
-$t->flush("images/2021/11/nome-do-arquivo.jpg");
+$users = (new \Source\Models\User())->all($pager->limit(), $pager->offset());
+foreach ($users as $user) {
+  $register = date_fmt($user->created_at);
+  echo <<<user
+    <article>
+    <h1>{$user->first_name} {$user->last_name}</h1>
+    <p>{$user->email} - Registrado em {$register}</p>
+</article>
+user;
+
+}
+
+  echo $pager->render();
+
+
+var_dump($total);
