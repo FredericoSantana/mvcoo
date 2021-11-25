@@ -26,6 +26,7 @@ class ComposerStaticInitf700461e2e0f4d2bbab258ddb0a7d86a
         ),
         'C' => 
         array (
+            'CoffeeCode\\Uploader\\' => 20,
             'CoffeeCode\\Optimizer\\' => 21,
         ),
     );
@@ -42,6 +43,10 @@ class ComposerStaticInitf700461e2e0f4d2bbab258ddb0a7d86a
         'League\\Plates\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/plates/src',
+        ),
+        'CoffeeCode\\Uploader\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/coffeecode/uploader/src',
         ),
         'CoffeeCode\\Optimizer\\' => 
         array (
