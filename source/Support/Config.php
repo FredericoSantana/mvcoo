@@ -9,6 +9,24 @@ const CONF_DB_PASS = "";
 const CONF_DB_NAME = "mvcoo";
 
 /**
+ * SITE
+ */
+const CONF_SITE_NAME = "FredDev";
+const CONF_SITE_LANG = "pt-BR";
+const CONF_SITE_DOMAIN = "wwww.freddev.com";
+
+
+/**
+ * SOCIAL
+ */
+const CONF_SOCIAL_TWITTER_CREATOR = "@fred";
+const CONF_SOCIAL_TWITTER_PUBLISHER = "@fred";
+const CONF_SOCIAL_FACEBOOK_APP = "586693779218787";
+const CONF_SOCIAL_FACEBOOK_PAGE = "FredDev";
+const CONF_SOCIAL_FACEBOOK_AUTHOR = "frederico.pereira.9";
+
+
+/**
  * PROJECT URLs
  */
 const CONF_URL_BASE = "http://www.localhost/mvcoo";
