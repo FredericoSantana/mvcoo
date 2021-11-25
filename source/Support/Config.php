@@ -67,11 +67,24 @@ const CONF_MESSAGE_ERROR = "error";
 const CONF_VIEW_PATH = __DIR__ . "/../../assets/views/test";
 const CONF_VIEW_EXT = "php";
 
+/**
+ * UPLOAD
+ */
+const CONF_UPLOAD_DIR = "storage/uploads";
+const CONF_UPLOAD_IMAGE_DIR = "images";
+const CONF_UPLOAD_FILE_DIR = "files";
+const CONF_UPLOAD_MEDIA_DIR = "medias";
+
+/**
+ * IMAGES
+ */
+const CONF_IMAGE_CACHE = CONF_UPLOAD_DIR . "/" . CONF_UPLOAD_IMAGE_DIR . "/cache";
+const CONF_IMAGE_SIZE = 2000;
+const CONF_IMAGE_QUALITY = ["jpg" => 75, "png" => 5];
 
 /**
  * MAIL
  */
-
 const CONF_MAIL_HOST = "smtp.gmail.com";
 const CONF_MAIL_PORT = "587";
 const CONF_MAIL_USER = "fredericosantana11@gmail.com";

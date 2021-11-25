@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'a6d025291e3b1982c5a09856e749c7d1aa3777ac',
+        'reference' => '02c4e5caaa84a146e47d3fa593683ef6daddf541',
         'name' => 'fredericosantana/mvcoo',
         'dev' => true,
     ),
@@ -34,7 +34,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'a6d025291e3b1982c5a09856e749c7d1aa3777ac',
+            'reference' => '02c4e5caaa84a146e47d3fa593683ef6daddf541',
             'dev_requirement' => false,
         ),
         'league/plates' => array(
